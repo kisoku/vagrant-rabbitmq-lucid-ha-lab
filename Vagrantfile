@@ -28,6 +28,8 @@ Vagrant::Config.run do |config|
         chef.add_recipe "apt"
         chef.add_recipe "timezone"
         chef.add_recipe "ntp"
+        chef.add_recipe "erlang"
+        chef.add_recipe "rabbitmq"
         chef.add_recipe "lucid-ha-backports"
       end
     end

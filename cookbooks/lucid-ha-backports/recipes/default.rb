@@ -40,6 +40,13 @@ package "pacemaker" do
     action :install
 end
 
+# Install the headers for the kernel we're using because the drbd8-utils package will install the kernel headers for the latest available :(
+
+package "linux-headers-`uname -r`" do
+    package_name "linux-headers-`uname -r`"
+    action :install
+end
+
 package "drbd8-utils" do
     package_name "drbd8-utils"
     action :install
