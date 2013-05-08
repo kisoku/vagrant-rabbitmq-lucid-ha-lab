@@ -40,6 +40,11 @@ package "pacemaker" do
     action :install
 end
 
+package "drbd8-utils" do
+    package_name "drbd8-utils"
+    action :install
+end
+
 execute "move corosync support files into place" do
     command "cp /vagrant/linux-ha/corosync.conf /etc/corosync/; cp /vagrant/linux-ha/authkey /etc/corosync/; cp /vagrant/linux-ha/pacemaker /etc/corosync/service.d/"
 end
