@@ -9,7 +9,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 WHAT IS THIS?!
 ##############
 
-This is a vagrant multi-vm based lab for exploring iSCSI, OCFS2, and the linux-ha stack on Ubuntu Lucid.
+This is a vagrant multi-vm based lab for exploring rabbitmq, DRBD, and the linux-ha stack on Ubuntu Lucid.
 
 INSTALL NOTES
 #############

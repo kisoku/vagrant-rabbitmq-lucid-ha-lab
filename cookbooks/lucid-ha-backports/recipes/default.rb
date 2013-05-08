@@ -40,26 +40,6 @@ package "pacemaker" do
     action :install
 end
 
-package "openais" do
-    package_name "openais"
-    action :install
-end
-
-package "ocfs2-tools-pacemaker" do
-    package_name "ocfs2-tools-pacemaker"
-    action :install
-end
-
-package "dlm-pcmk" do
-    package_name "dlm-pcmk"
-    action :install
-end
-
-package "nfs-kernel-server" do
-    package_name "nfs-kernel-server"
-    action :install
-end
-
 execute "move corosync support files into place" do
     command "cp /vagrant/linux-ha/corosync.conf /etc/corosync/; cp /vagrant/linux-ha/authkey /etc/corosync/; cp /vagrant/linux-ha/pacemaker /etc/corosync/service.d/"
 end
