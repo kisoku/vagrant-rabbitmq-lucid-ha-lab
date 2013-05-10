@@ -1,6 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+BOX_NAME = "Ubuntu lucid 32"
+BOX_URL = 'http://vagrant.open.qualcomm.com/lucid32.box'
+# BOX_URL = 'http://files.vagrantup.com/lucid32.box'
+
 Vagrant::Config.run do |config|
 
   cluster_nodes = {
@@ -10,8 +14,8 @@ Vagrant::Config.run do |config|
 
   cluster_nodes.each_pair do |node, ip_suffix|
     config.vm.define node do |cluster_node|
-      cluster_node.vm.box = "Ubuntu lucid 32"
-      cluster_node.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+      cluster_node.vm.box = BOX_NAME
+      cluster_node.vm.box_url = BOX_URL
       cluster_node.vm.network :hostonly, "192.168.122.#{ip_suffix}"
       cluster_node.vm.network :hostonly, "192.168.133.#{ip_suffix}"
 
