@@ -1,0 +1,6 @@
+primitive p_drbd_rabbitmq ocf:linbit:drbd \
+	params drbd_resource="rabbitmq" \
+	op monitor role="Master" interval=10 \
+	op monitor role="Slave" interval=30
+ms ms_drbd_mysql p_drbd_rabbitmq \
+	meta clone-max="2" master-max="1" notify="true"

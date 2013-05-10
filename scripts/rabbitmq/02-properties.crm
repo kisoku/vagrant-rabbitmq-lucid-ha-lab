@@ -1,0 +1,2 @@
+property no-quorum-policy="ignore" stonith-enabled="false"
+rsc_defaults $id="rsc-options" resource-stickiness="200" failure-timeout="10min"

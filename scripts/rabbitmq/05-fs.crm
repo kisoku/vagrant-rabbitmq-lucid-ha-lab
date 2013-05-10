@@ -1,0 +1,5 @@
+primitive p_fs_rabbitmq ocf:heartbeat:Filesystem \
+	params directory="/var/lib/mysql" device="/dev/drbd0" fstype="xfs" \
+	op monitor interval=20
+colocation c_rabbitmq_on_drbd inf: p_fs_rabbitmq ms_drbd_rabbitmq:Master
+order o_drbd_before_rabbitmq inf: ms_drbd_rabbitmq:promote p_fs_rabbitmq:start
