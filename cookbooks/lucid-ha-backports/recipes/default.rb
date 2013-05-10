@@ -59,3 +59,7 @@ end
 execute "enable corosync init.d script" do
     command "sed -i -e 's/START=no/START=yes/' /etc/default/corosync"
 end
+
+execute "Move drbd common config into place" do
+    command "cp /vagrant/linux-ha/global_common.conf /etc/drbd.d/"
+end
