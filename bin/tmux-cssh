@@ -1,0 +1,14 @@
+#!/bin/bash
+# Usage: tmux-cssh user1@host1 user2@host2 host3 host4 host5 host6 [...]
+SESSION=cssh-$$
+tmux new-session -d -s $SESSION "exec ssh -F ssh_config $1"
+shift
+for host in "$@"; do
+	tmux split-window -t $SESSION "exec ssh -F ssh_config $host"
+	tmux select-layout -t $SESSION tiled >/dev/null
+	done
+	tmux set-window-option -t $SESSION status off >/dev/null
+	tmux set-window-option -t $SESSION synchronize-panes on >/dev/null
+	tmux bind-key s set-window synchronize-panes
+	exec tmux attach -t $SESSION
+
