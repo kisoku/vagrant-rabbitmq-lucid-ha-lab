@@ -1,0 +1,3 @@
+primitive p_rabbitmq-vip ocf:heartbeat:IPaddr2 \
+	params ip="192.168.122.110" cidr_netmask="24" iflabel="vip" \
+	op monitor interval="30s"

@@ -1,0 +1,6 @@
+primitive p_rabbitmq ocf:rabbitmq:rabbitmq-server \
+        params mnesia_base="/var/lib/rabbitmq" \
+        op monitor interval="20s" timeout="10s"
+group g_services p_rabbitmq-vip p_fs-rabbitmq p_rabbitmq
+colocation co_drbd_rabbitmq_for_g_services inf: g_services:Started ms_drbd_rabbitmq:Master
+order o_drbd_rabbitmq_before_g_services inf: ms_drbd_rabbitmq:promote g_services:start
