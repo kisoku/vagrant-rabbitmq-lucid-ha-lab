@@ -21,8 +21,7 @@ apt_repository "lucid-ha-backports" do
   uri "http://ppa.launchpad.net/ubuntu-ha-maintainers/ppa/ubuntu"
   distribution node['lsb']['codename']
   components ["main"]
-  keyserver "keyserver.ubuntu.com"
-  key "56497ED8"
+  key "ubuntu-ha-maintainers.asc"
 end
 
 package "libglib2" do
