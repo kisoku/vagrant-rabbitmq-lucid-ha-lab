@@ -1,8 +1,7 @@
 #!/bin/bash
-echo "192.168.122.111 alice" >> /etc/hosts
-echo "192.168.122.112 bob" >> /etc/hosts
-echo "192.168.122.113 charlie" >> /etc/hosts
-echo "192.168.122.114 daisy" >> /etc/hosts
+echo "192.168.122.115 eric" >> /etc/hosts
+echo "192.168.122.116 frank" >> /etc/hosts
+
 
 sudo cp -a /vagrant/.ssh /root/
 sudo chown -R root:root /root/.ssh
