@@ -22,3 +22,15 @@ Hostname 127.0.0.1
 Port 22114
 User root
 IdentityFile .ssh/id_rsa
+
+Host eric
+Hostname 127.0.0.1
+Port 22115
+User root
+IdentityFile .ssh/id_rsa
+
+Host frank
+Hostname 127.0.0.1
+Port 22116
+User root
+IdentityFile .ssh/id_rsa
